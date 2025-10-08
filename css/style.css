@@ -1,0 +1,71 @@
+/*FOOTER*/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--color-principal);
+    padding: 20px;
+    color: var(--color-acento);
+}
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-acento);
+    transition: color var(--transicion);
+}
+
+footer a:hover {
+    color: var(--color-borde);
+}
+
+footer img {
+    width: 30px;
+    height: 30px;
+    transition: transform var(--transicion);
+}
+
+footer img:hover {
+    transform: scale(1.2);
+}
+
+
+/*INDEX*/
+.banner {
+  background-image: url(../img/banner-index.jpg); 
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.banner h2 {
+  font-size: 2.5em;
+  margin: 0;
+  text-shadow: 20px 20px 30px rgba(0, 0, 0, 0.7);
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+h3 {
+  text-align: center;
+  margin: 50px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
