@@ -38,7 +38,12 @@
                         <img src="../img/alfombra-de-vaca-blanca-con-puntos.jpg" class="card-img-top" alt="alfombra de vaca blanca con puntos">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Alfombra de vaca blanca con puntos</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Alfombra de vaca blanca con puntos"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -47,26 +52,41 @@
                         <img src="../img/alfombra-de-vaca-overa.jpg" class="card-img-top" alt="alfombra de vaca overa">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Alfombra de vaca overa</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Alfombra de vaca overa"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="../img/cuero-de-cabra-2.jpg" class="card-img-top" alt="Cero de cabra">
+                        <img src="../img/cuero-de-cabra-2.jpg" class="card-img-top" alt="Cuero de cabra">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Producto 3</h5>
                             <p class="card-text">Descripción breve del producto 3.</p>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Cuero de cabra"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="../img/cuero-de-cabra-3.jpg" class="card-img-top" alt="Cero de cabra">
+                        <img src="../img/cuero-de-cabra-3.jpg" class="card-img-top" alt="Cuero de cabra">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cuero de cabra</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Cuero de cabra"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +97,12 @@
                         <img src="../img/cuero-de-cabra-4.jpg" class="card-img-top" alt="Cuero de cabra">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cuero de cabra</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Cuero de cabra"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +111,12 @@
                         <img src="../img/cuero-de-obeja.jpg" class="card-img-top" alt="Cuero de oveja">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cuero de oveja</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Cuero de oveja"
+                                data-precio="80.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +125,12 @@
                         <img src="../img/respaldo-de-madera-y-cuero.jpg" class="card-img-top" alt="Respaldo de madera y cuero">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Respaldo de madera y cuero</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Respaldo de madera y cuero"
+                                data-precio="270.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -104,10 +139,21 @@
                         <img src="../img/cartera-de-cabra.jpg" class="card-img-top" alt="Cartera de cabra">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cartera de cabra</h5>
-                            <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+                            <a  class="btn btn-primary mt-auto"
+                                onclick="agregarAlCarrito(this)"
+                                data-nombre="Cartera de cabra"
+                                data-precio="130.000">
+                                Comprar
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container my-5">
+                <h3>🛒 Carrito</h3>
+                <ul id="carrito-lista" class="list-group mb-3"></ul>
+                <p>Total: $<span id="carrito-total">0</span></p>
+                <button class="btn btn-success" onclick="finalizarCompra()">Finalizar compra</button>
             </div>
     </main>
     <footer class="bg-black py-3">
@@ -118,5 +164,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/java/carrito.js"></script>
 </body>
 </html>

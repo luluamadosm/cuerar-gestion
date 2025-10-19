@@ -94,6 +94,21 @@ h3 {
     color: #222;
 }
 
+.btn-success {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-success:hover {
+  background-color: #ffffff;
+    color: #222;
+}
+
 /*CONTACTO*/
 .banner-contacto {
   background-image: url(../img/banner-contacto.jpg); 
