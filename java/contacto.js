@@ -1,5 +1,8 @@
 // Funcionalidad para el formulario de contacto
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar EmailJS (reemplaza 'TU_PUBLIC_KEY' con tu clave pública de EmailJS)
+    emailjs.init('TU_PUBLIC_KEY'); // Obtén esta clave en https://www.emailjs.com/
+    
     const formularioContacto = document.querySelector('form');
     
     formularioContacto.addEventListener('submit', function(e) {
@@ -23,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Mostrar popup de éxito
-        mostrarPopup('¡Gracias por contactarnos! Alguien de nuestro equipo se contactará contigo a la brevedad.', 'success');
+        // Enviar correo electrónico usando EmailJS
+        enviarCorreo(nombre, email, mensaje);
         
         // Limpiar el formulario
         formularioContacto.reset();
@@ -90,3 +93,57 @@ document.addEventListener('keydown', function(e) {
         cerrarPopup();
     }
 });
+
+// Función para enviar correo electrónico
+function enviarCorreo(nombre, email, mensaje) {
+    // Mostrar mensaje de envío
+    mostrarPopup('Enviando mensaje...', 'info');
+    
+    // Parámetros del template de email
+    const templateParams = {
+        from_name: nombre,
+        from_email: email,
+        message: mensaje,
+        to_name: 'Equipo Cuerar',
+        reply_to: email
+    };
+    
+    // Enviar email al equipo (notificación interna)
+    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            console.log('Email enviado exitosamente:', response.status, response.text);
+            
+            // Cerrar popup de "enviando" y mostrar éxito
+            cerrarPopup();
+            setTimeout(() => {
+                mostrarPopup('¡Gracias por contactarnos! Alguien de nuestro equipo se contactará contigo a la brevedad.', 'success');
+            }, 300);
+            
+            // Enviar correo de confirmación al cliente
+            enviarCorreoConfirmacion(nombre, email);
+            
+        }, function(error) {
+            console.error('Error al enviar email:', error);
+            cerrarPopup();
+            setTimeout(() => {
+                mostrarPopup('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.', 'error');
+            }, 300);
+        });
+}
+
+// Función para enviar correo de confirmación al cliente
+function enviarCorreoConfirmacion(nombre, email) {
+    const templateParamsConfirmacion = {
+        to_name: nombre,
+        to_email: email,
+        company_name: 'Cuerar'
+    };
+    
+    // Enviar correo de confirmación (usa un template diferente)
+    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_CONFIRMACION_ID', templateParamsConfirmacion)
+        .then(function(response) {
+            console.log('Correo de confirmación enviado:', response.status, response.text);
+        }, function(error) {
+            console.error('Error al enviar correo de confirmación:', error);
+        });
+}

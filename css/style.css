@@ -352,6 +352,15 @@ h3 {
   border-bottom-color: #dc3545;
 }
 
+/* Estilos para popup de info */
+.popup-overlay.info .popup-header h4 {
+  color: #17a2b8;
+}
+
+.popup-overlay.info .popup-header {
+  border-bottom-color: #17a2b8;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .popup-content {
