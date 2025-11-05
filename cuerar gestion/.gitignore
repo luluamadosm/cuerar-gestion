@@ -1,0 +1,15 @@
+*.pdf
+*.mp3
+*.mp4
+*.jpg
+*.png
+desktop.ini
+../*
+.vscode/
+*.code-workspace
+GTA*
+KONAMI/
+comision*/
+teoria*/
+pruebas/
+audio*
