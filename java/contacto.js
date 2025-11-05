@@ -1,7 +1,7 @@
 // Funcionalidad para el formulario de contacto
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar EmailJS (reemplaza 'TU_PUBLIC_KEY' con tu clave pública de EmailJS)
-    emailjs.init('TU_PUBLIC_KEY'); // Obtén esta clave en https://www.emailjs.com/
+    emailjs.init('GU4nBkQKspZms7-6G'); // Obtén esta clave en https://www.emailjs.com/
     
     const formularioContacto = document.querySelector('form');
     
@@ -109,7 +109,7 @@ function enviarCorreo(nombre, email, mensaje) {
     };
     
     // Enviar email al equipo (notificación interna)
-    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams)
+    emailjs.send('service_iwa1rff', 'template_5bys99c', templateParams)
         .then(function(response) {
             console.log('Email enviado exitosamente:', response.status, response.text);
             
@@ -140,7 +140,7 @@ function enviarCorreoConfirmacion(nombre, email) {
     };
     
     // Enviar correo de confirmación (usa un template diferente)
-    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_CONFIRMACION_ID', templateParamsConfirmacion)
+    emailjs.send('service_iwa1rff', 'template_kd31iva', templateParamsConfirmacion)
         .then(function(response) {
             console.log('Correo de confirmación enviado:', response.status, response.text);
         }, function(error) {
